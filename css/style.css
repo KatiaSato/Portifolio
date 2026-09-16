@@ -1,0 +1,812 @@
+/* =========================
+   CONFIGURAÇÕES GERAIS
+   ========================= */
+
+:root {
+  --bg-primary: #0A1828;
+  --bg-secondary: #101F31;
+  --bg-card: #142438;
+
+  --text-primary: #F5F7FA;
+  --text-secondary: #C5CED8;
+  --text-muted: #8291A3;
+
+  --turquoise: #20B2AA;
+  --turquoise-light: #40D0C7;
+
+  --gold: #BFA181;
+  --gold-light: #D4BA9D;
+
+  --border: #24384D;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Ovo", serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Cinzel Decorative", serif;
+}
+.nav-links,
+.btn,
+.contact-button,
+.project-tech,
+.project-github {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* =========================
+   NAVBAR
+   ========================= */
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+
+  background-color: var(--bg-primary);
+
+  z-index: 1000;
+
+  position: fixed;
+}
+header::after {
+  content: "";
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 100%;
+  height: 1px;
+
+  background-color: goldenrod;
+}
+
+.navbar {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 32px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: "Cinzel Decorative", serif;
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: 1px;
+
+  color: var(--text-primary);
+  text-decoration: none;
+
+  transition: color 0.25s ease;
+}
+.logo:hover {
+  color: var(--gold-light);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+
+  height: 70px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  font-family: "Ovo", serif;
+  font-size: 17px;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+
+  color: var(--text-secondary);
+  text-decoration: none;
+
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.nav-links a:hover {
+  color: var(--gold-light);
+}
+.nav-links .nav-curriculo {
+  padding: 8px 14px;
+
+  color: var(--turquoise-light);
+  border: 1px solid var(--turquoise);
+  border-radius: 6px;
+
+  transition:
+    color 0.25s ease,
+    border-color 0.25s ease,
+    background-color 0.25s ease;
+}
+
+.nav-links .nav-curriculo:hover {
+  color: var(--gold-light);
+  border-color: var(--gold);
+  background-color: rgba(191, 161, 129, 0.08);
+}
+
+/* =========================
+   HERO
+   ========================= */
+
+.hero {
+  min-height: 100vh;
+
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 100px 32px 40px;
+
+  display: flex;
+  align-items: center;
+}
+
+.hero-content {
+  max-width: 700px;
+}
+
+.hero-intro {
+  color: var(--gold);
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.hero h1 {
+  color: var(--text-primary);
+  font-size: 72px;
+  line-height: 1;
+  margin-bottom: 16px;
+  font-family: "Cinzel Decorative", serif;
+  font-weight: 700;
+}
+
+.hero h2 {
+  color: var(--turquoise-light);
+  font-size: 32px;
+  margin-bottom: 24px;
+  font-family: "Manrope", sans-serif;
+  font-weight: 700;
+}
+
+.hero-description {
+  max-width: 600px;
+
+  color: var(--text-secondary);
+  font-size: 18px;
+  line-height: 1;
+}
+
+
+/* =========================
+   BOTÕES
+   ========================= */
+
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 14px 28px;
+
+  border-radius: 10px;
+  text-decoration: none;
+
+  font-weight: 600;
+
+  gap: 8px;
+
+  transition:
+    transform 0.25s ease,
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  border-color: var(--gold);
+  color: var(--gold-light);
+
+  box-shadow: 0 8px 20px rgba(191, 161, 129, 0.15);
+}
+
+.btn-primary {
+  background-color: var(--turquoise);
+  color: var(--text-primary);
+  border: 1px solid var(--turquoise);
+}
+
+.btn-primary:hover {
+  background-color: var(--gold);
+  border-color: var(--gold);
+  color: var(--bg-primary);
+}
+
+.btn-secondary {
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+}
+
+.btn-secondary:hover {
+  border-color: var(--gold);
+  color: var(--gold-light);
+}
+
+/* =========================
+   SOBRE MIM
+   ========================= */
+
+.about {
+  padding: 100px 32px;
+  border-top: 1px solid #1e293b;
+}
+
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-label {
+  color: var(--gold);
+
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 2px;
+
+  margin-bottom: 12px;
+}
+
+.about h2 {
+  font-size: 40px;
+  margin-bottom: 32px;
+}
+
+.about-text {
+  max-width: 800px;
+}
+
+.about-text p {
+  color: #cbd5e1;
+  font-size: 18px;
+  line-height: 1;
+  margin-bottom: 24px;
+
+  text-align: justify;
+  text-justify: inter-word;
+}
+/* =========================
+   PROJETOS
+   ========================= */
+
+.projects {
+  padding: 100px 32px;
+  border-top: 1px solid #1e293b;
+}
+
+.projects-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.projects-container > h2 {
+  font-size: 40px;
+  margin-bottom: 48px;
+}
+
+
+/* CARD DO PROJETO */
+
+.project-card {
+  padding: 48px;
+
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 64px;
+  align-items: center;
+
+  background-color: #111c31;
+  border: 1px solid #1e293b;
+  border-radius: 24px;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+
+  border-color: goldenrod;
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.25);
+}
+
+
+/* =========================
+   IMAGENS
+   ========================= */
+
+.project-images {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.project-main-image {
+  width: 210px;
+  border-radius: 18px;
+
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.35);
+
+  transition:
+    opacity 0.18s ease,
+    transform 0.18s ease;
+}
+
+.project-main-image:hover {
+  transform: translateY(-6px) scale(1.02);
+}
+
+.project-main-image.changing {
+  opacity: 0;
+  transform: scale(0.98);
+}
+
+/* IMAGENS SECUNDÁRIAS */
+
+.project-secondary-images {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 12px;
+}
+
+.project-secondary-images img {
+  width: 110px;
+  border-radius: 10px;
+
+  opacity: 0.85;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.25);
+
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease;
+}
+
+.project-secondary-images img:hover {
+  opacity: 1;
+  transform: translateY(-6px) scale(1.06);
+}
+
+/* =========================
+   INFORMAÇÕES
+   ========================= */
+
+.project-type {
+  color: #94a3b8;
+
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 2px;
+
+  margin-bottom: 10px;
+}
+
+.project-info h3 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.project-description {
+  color: #cbd5e1;
+
+  font-size: 17px;
+  line-height: 1;
+
+  margin-bottom: 24px;
+}
+
+
+/* TECNOLOGIAS */
+
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+
+  margin-bottom: 24px;
+}
+
+.project-tech span {
+  padding: 7px 12px;
+
+  color: #cbd5e1;
+  background-color: #1e293b;
+
+  border: 1px solid #334155;
+  border-radius: 999px;
+
+  font-size: 13px;
+}
+
+
+/* DESTAQUES */
+
+.project-highlights {
+  color: #94a3b8;
+
+  line-height: 1;
+  font-size: 15px;
+
+  margin-bottom: 28px;
+}
+
+.project-highlights strong {
+  color: #cbd5e1;
+}
+
+
+/* GITHUB */
+
+.project-github {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+
+  color: var(--turquoise);
+
+  text-decoration: none;
+  font-weight: bold;
+
+  transition:
+    transform 0.2s ease,
+    color 0.2s ease;
+}
+
+.project-github i {
+  font-size: 22px;
+}
+
+.project-github:hover {
+  color: var(--gold-light);
+  transform: translateX(4px);
+}
+/* =========================
+   FOTOGRAFIA
+   ========================= */
+
+.photography {
+  padding: 100px 32px;
+}
+
+.photography-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.photography-container > h2 {
+  font-size: 40px;
+  margin-bottom: 48px;
+}
+
+.under-construction {
+  padding: 70px 32px;
+
+  text-align: center;
+
+  background-color: #111c31;
+  border: 1px dashed #334155;
+  border-radius: 24px;
+}
+
+.under-construction i {
+  color: #94a3b8;
+  font-size: 48px;
+  margin-bottom: 24px;
+}
+
+.under-construction h3 {
+  font-size: 26px;
+  margin-bottom: 12px;
+}
+
+.under-construction p {
+  max-width: 550px;
+  margin: 0 auto;
+
+  color: #94a3b8;
+  font-size: 16px;
+  line-height: 1;
+}
+
+/* =========================
+   CONTATO
+   ========================= */
+.about,
+.projects,
+.photography,
+.contact {
+  position: relative;
+  border-top: none;
+}
+
+.about::before,
+.projects::before,
+.photography::before,
+.contact::before {
+  content: "";
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 1px;
+
+  background: linear-gradient(
+    to right,
+    var(--turquoise) 0%,
+    var(--turquoise) 50%,
+    var(--gold) 50%,
+    var(--gold) 100%
+  );
+}
+
+.about::after,
+.projects::after,
+.photography::after,
+.contact::after {
+  content: "";
+  position: absolute;
+
+  top: -5px;
+  left: 50%;
+
+  width: 10px;
+  height: 10px;
+
+  background-color: var(--gold);
+
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.about::after,
+.photography::after {
+  background-color: var(--turquoise);
+}
+
+.projects::after,
+.contact::after {
+  background-color: var(--gold);
+}
+
+.contact {
+  padding: 100px 32px;
+}
+
+.contact-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.contact-container .section-label {
+  text-align: center;
+}
+
+.contact h2 {
+  font-size: 40px;
+  margin-bottom: 16px;
+}
+
+.contact-description {
+  max-width: 600px;
+  margin: 0 auto 36px;
+
+  color: #94a3b8;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.contact-button {
+  min-width: 145px;
+  padding: 14px 20px;
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  color: var(--turquoise);
+  background-color: #111c31;
+
+  border: 1px solid var(--turquoise);
+  border-radius: 10px;
+
+  text-decoration: none;
+  font-weight: bold;
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    background-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.contact-button i {
+  font-size: 20px;
+}
+
+.contact-button:hover {
+  transform: translateY(-4px);
+
+  border-color: var(--gold);
+  color: var(--gold-light);
+
+  box-shadow: 0 10px 25px rgba(191, 161, 129, 0.15);
+}
+
+/* =========================
+   FOOTER
+   ========================= */
+
+.footer {
+  padding: 48px 32px 32px;
+  text-align: center;
+
+  border-top: 1px solid #20B2AA;
+}
+
+.footer > p:first-child {
+  color: #cbd5e1;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+
+.social-links a {
+  color: #20B2AA;
+  font-size: 26px;
+
+  transition: 0.2s;
+}
+
+.social-links a:hover {
+  color: #D4BA9D;
+  transform: translateY(-3px);
+}
+
+.copyright {
+  color: #20B2AA;
+  font-size: 14px;
+  margin-top: 24px;
+
+}
+/* ========================================
+   DIVISORES DAS SEÇÕES
+   ======================================== */
+
+.about,
+.projects,
+.photography,
+.contact {
+  position: relative;
+  border-top: none;
+}
+
+/* Linha Tiffany + dourado */
+.about::before,
+.projects::before,
+.photography::before,
+.contact::before {
+  content: "";
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 1px;
+
+  background: linear-gradient(
+    to right,
+    var(--turquoise) 0%,
+    var(--turquoise) 50%,
+    var(--gold) 50%,
+    var(--gold) 100%
+  );
+}
+
+/* Losango central */
+.about::after,
+.projects::after,
+.photography::after,
+.contact::after {
+  content: "";
+  position: absolute;
+
+  top: -5px;
+  left: 50%;
+
+  width: 10px;
+  height: 10px;
+
+  background-color: var(--gold);
+
+  transform: translateX(-50%) rotate(45deg);
+
+  z-index: 2;
+}
+
+/* Alternância dos detalhes */
+.about::after,
+.photography::after {
+  background-color: var(--turquoise);
+}
+
+.projects::after,
+.contact::after {
+  background-color: var(--gold);
+}
