@@ -398,8 +398,8 @@ header::after {
   gap: 64px;
   align-items: center;
 
-  background-color: #1B171A;
-  border: 1px solid var(--border);
+  background-color: #181116;
+  border: 1px solid #352630;
   border-radius: 24px;
 
   transition:
@@ -1000,8 +1000,6 @@ header::after {
   .project-card {
     gap: 32px;
     padding: 24px;
-    background-color: #181116;
-    border-color: #352630;
   }
 
   .project-main-image {
