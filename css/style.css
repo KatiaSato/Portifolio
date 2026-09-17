@@ -1000,6 +1000,8 @@ header::after {
   .project-card {
     gap: 32px;
     padding: 24px;
+    background-color: #181116;
+    border-color: #352630;
   }
 
   .project-main-image {
