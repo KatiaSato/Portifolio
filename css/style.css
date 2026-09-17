@@ -3,21 +3,22 @@
    ========================= */
 
 :root {
-  --bg-primary: #0A1828;
-  --bg-secondary: #101F31;
-  --bg-card: #142438;
+  --bg-primary: #120B10;
+  --bg-secondary: #191017;
+  --bg-card: #241720;
+  --bg-elevated: #30202B;
 
-  --text-primary: #F5F7FA;
-  --text-secondary: #C5CED8;
-  --text-muted: #8291A3;
+  --text-primary: #F7F3F5;
+  --text-secondary: #D6CDD2;
+  --text-muted: #A99AA2;
 
-  --turquoise: #20B2AA;
-  --turquoise-light: #40D0C7;
+  --turquoise: #7A1F4A;
+  --turquoise-light: #9A2B5B;
 
-  --gold: #BFA181;
-  --gold-light: #D4BA9D;
+  --gold: #B23A6B;
+  --gold-light: #D05A87;
 
-  --border: #24384D;
+  --border: #49303F;
 }
 
 * {
@@ -31,7 +32,7 @@ html {
 }
 
 body {
-  font-family: "Ovo", serif;
+  font-family: "Inter", sans-serif;
   background-color: var(--bg-primary);
   color: var(--text-primary);
 }
@@ -39,14 +40,14 @@ body {
 h1,
 h2,
 h3 {
-  font-family: "Cinzel Decorative", serif;
+  font-family: "Poppins", sans-serif;
 }
 .nav-links,
 .btn,
 .contact-button,
 .project-tech,
 .project-github {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 /* =========================
@@ -74,7 +75,7 @@ header::after {
   width: 100%;
   height: 1px;
 
-  background-color: goldenrod;
+  background-color: var(--gold);
 }
 
 .navbar {
@@ -88,7 +89,7 @@ header::after {
 }
 
 .logo {
-  font-family: "Cinzel Decorative", serif;
+  font-family: "Poppins", sans-serif;
   font-size: 19px;
   font-weight: 700;
   letter-spacing: 1px;
@@ -114,6 +115,47 @@ header::after {
   justify-content: space-between;
 }
 
+.nav-toggle {
+  display: none;
+  width: 44px;
+  height: 44px;
+  padding: 10px;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  color: var(--text-primary);
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.nav-toggle-line {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: currentColor;
+  border-radius: 2px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-line:first-child {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-line:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-line:last-child {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+.nav-toggle:focus-visible {
+  outline: 2px solid var(--gold-light);
+  outline-offset: 3px;
+}
+
 .nav-links {
   display: flex;
   align-items: center;
@@ -125,7 +167,7 @@ header::after {
 }
 
 .nav-links a {
-  font-family: "Ovo", serif;
+  font-family: "Inter", sans-serif;
   font-size: 17px;
   font-weight: 400;
   letter-spacing: 0.3px;
@@ -157,7 +199,7 @@ header::after {
 .nav-links .nav-curriculo:hover {
   color: var(--gold-light);
   border-color: var(--gold);
-  background-color: rgba(191, 161, 129, 0.08);
+  background-color: rgba(178, 58, 107, 0.08);
 }
 
 /* =========================
@@ -167,12 +209,23 @@ header::after {
 .hero {
   min-height: 100vh;
 
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 100px 32px 40px;
+  background-color: var(--bg-primary);
+  background-image:
+    linear-gradient(to bottom, rgba(18, 11, 16, 0.25) 0%, rgba(18, 11, 16, 0.25) 70%, #120B10 100%),
+    url("../img/background/hero-wine-v2.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 
   display: flex;
   align-items: center;
+}
+
+.hero-inner {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 100px 32px 40px;
 }
 
 .hero-content {
@@ -180,6 +233,7 @@ header::after {
 }
 
 .hero-intro {
+  font-family: "Poppins", sans-serif;
   color: var(--gold);
   font-size: 20px;
   margin-bottom: 8px;
@@ -190,7 +244,7 @@ header::after {
   font-size: 72px;
   line-height: 1;
   margin-bottom: 16px;
-  font-family: "Cinzel Decorative", serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 700;
 }
 
@@ -198,7 +252,7 @@ header::after {
   color: var(--turquoise-light);
   font-size: 32px;
   margin-bottom: 24px;
-  font-family: "Manrope", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 700;
 }
 
@@ -248,7 +302,7 @@ header::after {
   border-color: var(--gold);
   color: var(--gold-light);
 
-  box-shadow: 0 8px 20px rgba(191, 161, 129, 0.15);
+  box-shadow: 0 8px 20px rgba(178, 58, 107, 0.15);
 }
 
 .btn-primary {
@@ -279,7 +333,6 @@ header::after {
 
 .about {
   padding: 100px 32px;
-  border-top: 1px solid #1e293b;
 }
 
 .about-container {
@@ -288,6 +341,7 @@ header::after {
 }
 
 .section-label {
+  font-family: "Poppins", sans-serif;
   color: var(--gold);
 
   font-size: 14px;
@@ -307,7 +361,7 @@ header::after {
 }
 
 .about-text p {
-  color: #cbd5e1;
+  color: var(--text-secondary);
   font-size: 18px;
   line-height: 1;
   margin-bottom: 24px;
@@ -321,7 +375,6 @@ header::after {
 
 .projects {
   padding: 100px 32px;
-  border-top: 1px solid #1e293b;
 }
 
 .projects-container {
@@ -345,8 +398,8 @@ header::after {
   gap: 64px;
   align-items: center;
 
-  background-color: #111c31;
-  border: 1px solid #1e293b;
+  background-color: #1B171A;
+  border: 1px solid var(--border);
   border-radius: 24px;
 
   transition:
@@ -358,7 +411,7 @@ header::after {
 .project-card:hover {
   transform: translateY(-5px);
 
-  border-color: goldenrod;
+  border-color: var(--gold);
 
   box-shadow:
     0 20px 50px rgba(0, 0, 0, 0.25);
@@ -478,7 +531,8 @@ header::after {
    ========================= */
 
 .project-type {
-  color: #94a3b8;
+  font-family: "Poppins", sans-serif;
+  color: var(--text-muted);
 
   font-size: 13px;
   font-weight: bold;
@@ -493,7 +547,7 @@ header::after {
 }
 
 .project-description {
-  color: #cbd5e1;
+  color: var(--text-secondary);
 
   font-size: 17px;
   line-height: 1;
@@ -515,10 +569,10 @@ header::after {
 .project-tech span {
   padding: 7px 12px;
 
-  color: #cbd5e1;
-  background-color: #1e293b;
+  color: var(--text-secondary);
+  background-color: var(--bg-card);
 
-  border: 1px solid #334155;
+  border: 1px solid var(--border);
   border-radius: 999px;
 
   font-size: 13px;
@@ -528,7 +582,7 @@ header::after {
 /* DESTAQUES */
 
 .project-highlights {
-  color: #94a3b8;
+  color: var(--text-muted);
 
   line-height: 1;
   font-size: 15px;
@@ -537,7 +591,7 @@ header::after {
 }
 
 .project-highlights strong {
-  color: #cbd5e1;
+  color: var(--text-secondary);
 }
 
 
@@ -589,13 +643,13 @@ header::after {
 
   text-align: center;
 
-  background-color: #111c31;
-  border: 1px dashed #334155;
+  background-color: var(--bg-elevated);
+  border: 1px dashed var(--border);
   border-radius: 24px;
 }
 
 .under-construction i {
-  color: #94a3b8;
+  color: var(--text-muted);
   font-size: 48px;
   margin-bottom: 24px;
 }
@@ -609,270 +663,222 @@ header::after {
   max-width: 550px;
   margin: 0 auto;
 
-  color: #94a3b8;
+  color: var(--text-muted);
   font-size: 16px;
   line-height: 1;
 }
 
-/* =========================
-   CONTATO
-   ========================= */
-.about,
-.projects,
-.photography,
-.contact {
-  position: relative;
-  border-top: none;
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.footer {
+  /* Espaçamento: cima | laterais | baixo */
+  padding: 40px 32px 28px;
+  /*       ↑     ↑    ↑
+          topo  lados baixo */
+
+  background-color: var(--bg-primary);
+
+  /* Linha que separa o footer da última section.
+     Está no .footer para ocupar 100% da largura da tela. */
+  border-top: 1px solid var(--border);
 }
 
-.about::before,
-.projects::before,
-.photography::before,
-.contact::before {
-  content: "";
-  position: absolute;
 
-  top: 0;
-  left: 0;
-
-  width: 100%;
-  height: 1px;
-
-  background: linear-gradient(
-    to right,
-    var(--turquoise) 0%,
-    var(--turquoise) 50%,
-    var(--gold) 50%,
-    var(--gold) 100%
-  );
-}
-
-.about::after,
-.projects::after,
-.photography::after,
-.contact::after {
-  content: "";
-  position: absolute;
-
-  top: -5px;
-  left: 50%;
-
-  width: 10px;
-  height: 10px;
-
-  background-color: var(--gold);
-
-  transform: translateX(-50%) rotate(45deg);
-}
-
-.about::after,
-.photography::after {
-  background-color: var(--turquoise);
-}
-
-.projects::after,
-.contact::after {
-  background-color: var(--gold);
-}
-
-.contact {
-  padding: 100px 32px;
-}
-
-.contact-container {
-  max-width: 1200px;
+.footer-container {
+  /* Limita apenas o conteúdo interno do footer.
+     A linha superior continua ocupando a tela inteira. */
+  max-width: 1100px;
   margin: 0 auto;
+
+  /* Centraliza todo o conteúdo do footer */
   text-align: center;
 }
 
-.contact-container .section-label {
-  text-align: center;
-}
 
-.contact h2 {
-  font-size: 40px;
-  margin-bottom: 16px;
-}
+/* ---------------------------------------------------------
+   TEXTO PRINCIPAL
+   "Construindo aplicações Android
+    com Kotlin e Jetpack Compose."
+   --------------------------------------------------------- */
 
-.contact-description {
-  max-width: 600px;
-  margin: 0 auto 36px;
+.footer-description {
+  margin: 0;
 
-  color: #94a3b8;
-  font-size: 17px;
+  color: var(--text-muted);
+
+  /* Tamanho do texto principal do footer */
+  font-size: 15px;
+
+  /* Espaçamento entre as duas linhas */
   line-height: 1.7;
 }
 
-.contact-links {
+
+/* ---------------------------------------------------------
+   REDES SOCIAIS
+   Container dos ícones: GitHub, LinkedIn, Email e WhatsApp
+   --------------------------------------------------------- */
+
+.footer-social {
   display: flex;
+
+  /* Centraliza o conjunto de redes sociais */
   justify-content: center;
-  flex-wrap: wrap;
-  gap: 14px;
+  align-items: flex-start;
+
+  /* Distância HORIZONTAL entre cada rede social */
+  gap: 24px;
+
+  /* Espaço entre o texto principal e as redes sociais */
+  margin-top: 24px;
 }
 
-.contact-button {
-  min-width: 145px;
-  padding: 14px 20px;
 
-  display: inline-flex;
-  justify-content: center;
+/* Cada link individual:
+   ícone em cima + nome da rede embaixo */
+.footer-social a {
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 10px;
 
-  color: var(--turquoise);
-  background-color: #111c31;
+  /* Distância VERTICAL entre o ícone e o nome da rede */
+  gap: 8px;
 
-  border: 1px solid var(--turquoise);
-  border-radius: 10px;
+  color: var(--text-secondary);
+
+  /* Tamanho do NOME das redes sociais */
+  font-size: 10px;
 
   text-decoration: none;
-  font-weight: bold;
 
   transition:
-    transform 0.25s ease,
-    border-color 0.25s ease,
-    background-color 0.25s ease,
-    box-shadow 0.25s ease;
+    color 0.25s ease,
+    transform 0.25s ease;
 }
 
-.contact-button i {
-  font-size: 20px;
+
+/* Tamanho dos ÍCONES das redes sociais */
+.footer-social a i {
+  font-size: 24px;
 }
 
-.contact-button:hover {
-  transform: translateY(-4px);
 
-  border-color: var(--gold);
-  color: var(--gold-light);
-
-  box-shadow: 0 10px 25px rgba(191, 161, 129, 0.15);
-}
-
-/* =========================
-   FOOTER
-   ========================= */
-
-.footer {
-  padding: 48px 32px 32px;
-  text-align: center;
-
-  border-top: 1px solid #20B2AA;
-}
-
-.footer > p:first-child {
-  color: #cbd5e1;
-  font-size: 18px;
-  margin-bottom: 20px;
-}
-
-.social-links {
-  display: flex;
-  justify-content: center;
-  gap: 24px;
-}
-
-.social-links a {
-  color: #20B2AA;
-  font-size: 26px;
-
-  transition: 0.2s;
-}
-
-.social-links a:hover {
-  color: #D4BA9D;
+/* Efeito ao passar o mouse sobre uma rede social */
+.footer-social a:hover {
+  color: var(--turquoise-light);
   transform: translateY(-3px);
 }
 
-.copyright {
-  color: #20B2AA;
+
+/* ---------------------------------------------------------
+   COPYRIGHT
+   --------------------------------------------------------- */
+
+.footer-copyright {
+  /* Espaço entre as redes sociais e o copyright */
+  margin: 28px 0 0;
+
+  color: var(--text-muted);
+
+  /* Tamanho da fonte do copyright */
   font-size: 14px;
-  margin-top: 24px;
-
-}
-/* ========================================
-   DIVISORES DAS SEÇÕES
-   ======================================== */
-
-.about,
-.projects,
-.photography,
-.contact {
-  position: relative;
-  border-top: none;
 }
 
-/* Linha Tiffany + dourado */
-.about::before,
-.projects::before,
-.photography::before,
-.contact::before {
-  content: "";
-  position: absolute;
 
-  top: 0;
-  left: 0;
+/* =========================================================
+   FOOTER - RESPONSIVIDADE
+   ========================================================= */
 
-  width: 100%;
-  height: 1px;
+@media (max-width: 700px) {
 
-  background: linear-gradient(
-    to right,
-    var(--turquoise) 0%,
-    var(--turquoise) 50%,
-    var(--gold) 50%,
-    var(--gold) 100%
-  );
-}
+  .footer {
+    /* Espaçamento menor no celular:
+       cima | laterais | baixo */
+    padding: 36px 20px 24px;
+  }
 
-/* Losango central */
-.about::after,
-.projects::after,
-.photography::after,
-.contact::after {
-  content: "";
-  position: absolute;
+  .footer-social {
+    /* Permite quebrar os ícones em mais de uma linha
+       caso não exista espaço suficiente */
+    flex-wrap: wrap;
 
-  top: -5px;
-  left: 50%;
-
-  width: 10px;
-  height: 10px;
-
-  background-color: var(--gold);
-
-  transform: translateX(-50%) rotate(45deg);
-
-  z-index: 2;
-}
-
-/* Alternância dos detalhes */
-.about::after,
-.photography::after {
-  background-color: var(--turquoise);
-}
-
-.projects::after,
-.contact::after {
-  background-color: var(--gold);
+    /* vertical | horizontal */
+    gap: 20px 24px;
+  }
 }
 
 /* Layout para tablets e telas menores; estilos desktop permanecem acima. */
 @media (max-width: 900px) {
   .navbar {
-    flex-direction: column;
-    gap: 18px;
-    padding: 20px 24px;
+    position: relative;
+    padding: 14px 24px;
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  .js .nav-links {
+    display: none;
   }
 
   .nav-links {
-    justify-content: center;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 12px 24px 20px;
+    background-color: var(--bg-secondary);
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 16px 30px rgba(0, 0, 0, 0.24);
+  }
+
+  .js .nav-links.is-open {
+    display: flex;
+  }
+
+  .nav-links li + li {
+    border-top: 1px solid var(--border);
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 13px 4px;
+  }
+
+  .nav-links .nav-curriculo {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 12px;
+    padding: 10px 14px;
+  }
+
+  .no-js .nav-toggle {
+    display: none;
+  }
+
+  .no-js .navbar {
     flex-wrap: wrap;
-    gap: 14px 22px;
+  }
+
+  .no-js .nav-links {
+    position: static;
+    flex-basis: 100%;
   }
 
   .hero {
     min-height: 100svh;
-    padding: 170px 24px 72px;
+  }
+
+  .hero-inner {
+    padding: 132px 24px 72px;
   }
 
   .hero-content {
@@ -900,7 +906,7 @@ header::after {
   .photography,
   .contact {
     padding: 80px 24px;
-    scroll-margin-top: 135px;
+    scroll-margin-top: 80px;
   }
 
   .about h2,
@@ -935,35 +941,19 @@ header::after {
 
 @media (max-width: 600px) {
   .navbar {
-    gap: 16px;
-    padding: 16px 20px;
+    padding: 12px 20px;
   }
 
   .logo {
     font-size: 17px;
-    text-align: center;
   }
 
   .nav-links {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 12px 16px;
-    width: 100%;
-    text-align: center;
+    padding: 12px 20px 20px;
   }
 
-  .nav-links li:last-child {
-    grid-column: 1 / -1;
-  }
-
-  .nav-links .nav-curriculo {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-  }
-
-  .hero {
-    padding: 210px 20px 64px;
+  .hero-inner {
+    padding: 120px 20px 64px;
   }
 
   .hero-intro {
@@ -993,7 +983,7 @@ header::after {
   .photography,
   .contact {
     padding: 64px 20px;
-    scroll-margin-top: 175px;
+    scroll-margin-top: 72px;
   }
 
   .about h2,

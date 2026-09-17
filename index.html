@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
-    href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Ovo&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;600;700&display=swap"
     rel="stylesheet"
   >
 
@@ -39,11 +39,16 @@
 
     <a href="#" class="logo">Katia Yoshie Sato</a>
 
-    <ul class="nav-links">
+    <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-controls="primary-navigation" aria-expanded="false">
+      <span class="nav-toggle-line"></span>
+      <span class="nav-toggle-line"></span>
+      <span class="nav-toggle-line"></span>
+    </button>
+
+    <ul class="nav-links" id="primary-navigation">
       <li><a href="#sobre">Sobre</a></li>
       <li><a href="#projetos">Projetos</a></li>
       <li><a href="#fotografia">Fotografia</a></li>
-      <li><a href="#contato">Contato</a></li>
       <li>
         <a
           href="files/curriculo-katia-sato.pdf"
@@ -63,6 +68,7 @@
 
   <section class="hero">
 
+    <div class="hero-inner">
     <div class="hero-content">
 
       <p class="hero-intro">
@@ -103,6 +109,7 @@
 
       </div>
 
+    </div>
     </div>
 
   </section>
@@ -399,105 +406,61 @@
     </div>
 
   </section>
-  <section id="contato" class="contact">
 
-    <div class="contact-container">
-
-      <p class="section-label">CONTATO</p>
-
-      <h2>Vamos conversar?</h2>
-
-      <p class="contact-description">
-        Se quiser conversar sobre oportunidades, projetos ou tecnologia,
-        entre em contato comigo por um dos canais abaixo.
-      </p>
-
-      <div class="contact-links">
-
-        <a
-          href="https://wa.me/5519989417376?text=Olá%2C%20Kátia%21%20Encontrei%20seu%20contato%20através%20do%20seu%20portfólio."
-          target="_blank"
-          rel="noopener noreferrer"
-          class="contact-button"
-        >
-          <i class="fa-brands fa-whatsapp"></i>
-          WhatsApp
-        </a>
-
-        <a
-          href="mailto:katiayoshiesato@gmail.com"
-          class="contact-button"
-        >
-          <i class="fa-solid fa-envelope"></i>
-          E-mail
-        </a>
-
-        <a
-          href="https://www.linkedin.com/in/katia-yoshie-sato/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="contact-button"
-        >
-          <i class="fa-brands fa-linkedin"></i>
-          LinkedIn
-        </a>
-
-        <a
-          href="https://github.com/KatiaSato"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="contact-button"
-        >
-          <i class="fa-brands fa-github"></i>
-          GitHub
-        </a>
-
-      </div>
-
-    </div>
-
-  </section>
 </main>
 <footer class="footer">
+  <div class="footer-container">
 
-  <div class="social-links">
+    <p class="footer-description">
+      Construindo aplicações Android<br>
+      com Kotlin e Jetpack Compose.
+    </p>
 
-    <div class="social-links">
-
-      <a href="https://github.com/KatiaSato"
-         target="_blank"
-         rel="noopener noreferrer"
-         aria-label="GitHub">
+    <div class="footer-social">
+      <a
+        href="https://github.com/KatiaSato"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="GitHub"
+      >
         <i class="fa-brands fa-github"></i>
+        <span>GitHub</span>
       </a>
 
-      <a href="https://www.linkedin.com/in/katia-yoshie-sato/"
-         target="_blank"
-         rel="noopener noreferrer"
-         aria-label="LinkedIn">
-        <i class="fa-brands fa-linkedin"></i>
+      <a
+        href="https://www.linkedin.com/in/katia-yoshie-sato/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="LinkedIn"
+      >
+        <i class="fa-brands fa-linkedin-in"></i>
+        <span>LinkedIn</span>
       </a>
 
-      <a href="mailto:katiayoshiesato@gmail.com"
-         aria-label="Enviar e-mail">
+      <a
+        href="mailto:katiayoshiesato@gmail.com"
+        aria-label="Email"
+      >
         <i class="fa-solid fa-envelope"></i>
+        <span>Email</span>
       </a>
 
-      <a href="https://wa.me/5519989417376?text=Olá%2C%20Kátia%21%20Encontrei%20seu%20contato%20através%20do%20seu%20portfólio."
-         target="_blank"
-         rel="noopener noreferrer"
-         aria-label="WhatsApp">
+      <a
+        href="https://wa.me/5519989417376?text=Olá%2C%20Kátia%21%20Encontrei%20seu%20contato%20através%20do%20seu%20portfólio."
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="WhatsApp"
+      >
         <i class="fa-brands fa-whatsapp"></i>
+        <span>WhatsApp</span>
       </a>
-
     </div>
 
+    <p class="footer-copyright">
+      © 2026 Katia Yoshie Sato
+    </p>
+
   </div>
-
-  <p class="copyright">
-    © 2026 Katia Sato
-  </p>
-
 </footer>
 <script src="js/app.js"></script>
 
