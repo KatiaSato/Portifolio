@@ -612,6 +612,10 @@ header::after {
     color 0.2s ease;
 }
 
+.project-note + .project-github {
+  margin-top: 28px;
+}
+
 .project-github i {
   font-size: 22px;
 }
